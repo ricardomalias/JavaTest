@@ -8,12 +8,11 @@ public class KComplementaryPairs {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KComplementaryPairs.class);
 
-    public Tuple2<Integer, Integer> isKComplementaryPair(int target, int[] numbers) {
+    public Tuple2<Integer, Integer> findKComplementaryPair(int target, int[] numbers) {
 
         for (int i = 0; i < numbers.length; i++) {
             for(int j = i; j < numbers.length; j++) {
                 if (i != j && numbers[i] + numbers[j] == target) {
-                    LOGGER.info("first number: {}, second number: {} ", numbers[i], numbers[j]);
                     return new Tuple2<>(numbers[i], numbers[j]);
                 }
             }
