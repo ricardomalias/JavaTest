@@ -5,7 +5,7 @@
 - Run build gradle 
 - Add a file path as argument for application
     - If you haven't any file in hand you can try `./src/main/resources/example.csv` as example
-    - Also you can try generate a base64 txt file like `base64 /dev/urandom | head -c 1000000000 > file.txt` and use some character different of a pipe to split phrases
+    - Also you can try generate a base64 txt file like `base64 /dev/urandom | head -c 1000000000 > file.txt` and use some character different than a pipe to split phrases
 - Run `Application` class
 
 
