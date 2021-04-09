@@ -1,6 +1,6 @@
-package service;
+package com.ricardomalias.test;
 
-import helper.TupleComparator;
+import com.ricardomalias.test.helper.TupleComparator;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;

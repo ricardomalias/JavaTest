@@ -1,4 +1,4 @@
-package helper;
+package com.ricardomalias.test.helper;
 
 import io.vavr.Tuple2;
 import org.junit.Assert;

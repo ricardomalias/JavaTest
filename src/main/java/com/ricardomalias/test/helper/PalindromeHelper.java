@@ -1,4 +1,4 @@
-package helper;
+package com.ricardomalias.test.helper;
 
 import java.text.Normalizer;
 import java.util.stream.IntStream;
@@ -16,7 +16,7 @@ public class PalindromeHelper {
 
         txt =  Normalizer.normalize(txt, Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "")
-                .replaceAll("(\\!|,|\\?|-|\\.)", "");
+                .replaceAll("([!,?\\-.&])", "");
 
         if (ignoreSpace) {
             txt = txt.replaceAll("\\s+", "");

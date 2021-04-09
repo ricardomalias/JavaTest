@@ -1,4 +1,4 @@
-package helper;
+package com.ricardomalias.test.helper;
 
 import org.junit.Test;
 

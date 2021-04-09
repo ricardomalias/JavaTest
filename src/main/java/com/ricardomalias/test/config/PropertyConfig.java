@@ -1,4 +1,4 @@
-package config;
+package com.ricardomalias.test.config;
 
 import java.io.File;
 import java.io.FileInputStream;

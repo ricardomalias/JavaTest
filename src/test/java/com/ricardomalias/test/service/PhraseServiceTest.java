@@ -1,17 +1,6 @@
-package service;
+package com.ricardomalias.test.service;
 
-import config.PropertyConfig;
-import config.SparkConfig;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.rdd.RDD;
 import org.junit.Test;
-import org.mockito.Mockito;
-import scala.Tuple2;
-
-import java.util.Properties;
-import java.util.stream.Stream;
 
 import static org.mockito.Mockito.mock;
 
