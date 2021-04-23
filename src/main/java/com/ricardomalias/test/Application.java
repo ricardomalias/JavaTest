@@ -5,7 +5,6 @@ import com.ricardomalias.test.config.SparkConfig;
 import com.ricardomalias.test.helper.CoinDeterminer;
 import com.ricardomalias.test.helper.GasStation;
 import com.ricardomalias.test.helper.KComplementaryPairs;
-import com.ricardomalias.test.helper.LongestWord;
 import com.ricardomalias.test.helper.PalindromeHelper;
 import com.ricardomalias.test.helper.StringScramble;
 import io.vavr.Tuple2;
@@ -13,8 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Properties;
-import java.util.Scanner;
 
 public class Application {
 
@@ -22,13 +23,15 @@ public class Application {
 
     public static void main(String[] args) {
 
-        startPhrase(args[0]);
-        startKComplementaryPairs();
-        startPalindrome();
-        System.out.println(LongestWord.run("fun&!! time"));
-        startStringScramble();
-        startCoinDeterminer();
-        startGasStation();
+//        startPhrase(args[0]);
+//        startKComplementaryPairs();
+//        startPalindrome();
+//        System.out.println(LongestWord.run("fun&!! time"));
+//        startStringScramble();
+//        startCoinDeterminer();
+//        startGasStation();
+        int[] teste = {5, 5, 6, 6, 1, 2};
+        System.out.println(example(teste));
     }
 
     private static void startPhrase(String filePath) {
@@ -86,5 +89,32 @@ public class Application {
         GasStation gasStation = new GasStation();
         String run = gasStation.run(strings);
         System.out.println("resultador final: " + run);
+    }
+
+    private static int example(int[] numbers) {
+
+        HashMap<Integer, Integer> teste = new HashMap<>();
+        for(int number : numbers) {
+            Integer integer = teste.get(number);
+
+            if(integer != null) {
+                Integer count = teste.get(number);
+                count++;
+                teste.put(number, count);
+            } else {
+                teste.put(number, 1);
+            }
+        }
+
+        Optional<Map.Entry<Integer, Integer>> first = teste.entrySet()
+                .stream()
+                .sorted((a, b) -> b.getValue() - a.getValue())
+                .findFirst();
+
+        if(first.isPresent()) {
+            return first.get().getKey();
+        }
+
+        return -1;
     }
 }
