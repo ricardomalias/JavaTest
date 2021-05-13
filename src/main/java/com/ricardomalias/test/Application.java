@@ -5,17 +5,32 @@ import com.ricardomalias.test.config.SparkConfig;
 import com.ricardomalias.test.helper.CoinDeterminer;
 import com.ricardomalias.test.helper.GasStation;
 import com.ricardomalias.test.helper.KComplementaryPairs;
+import com.ricardomalias.test.helper.LongestWord;
 import com.ricardomalias.test.helper.PalindromeHelper;
+import com.ricardomalias.test.helper.RequestDataCounter;
 import com.ricardomalias.test.helper.StringScramble;
 import io.vavr.Tuple2;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Resource;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Application {
 
@@ -23,15 +38,19 @@ public class Application {
 
     public static void main(String[] args) {
 
-//        startPhrase(args[0]);
-//        startKComplementaryPairs();
-//        startPalindrome();
-//        System.out.println(LongestWord.run("fun&!! time"));
-//        startStringScramble();
-//        startCoinDeterminer();
-//        startGasStation();
+        startPhrase(args[0]);
+        startKComplementaryPairs();
+        startPalindrome();
+        System.out.println(LongestWord.run("fun&!! time"));
+        startStringScramble();
+        startCoinDeterminer();
+        startGasStation();
+
         int[] teste = {5, 5, 6, 6, 1, 2};
         System.out.println(example(teste));
+
+        RequestDataCounter requestDataCounter = new RequestDataCounter();
+        requestDataCounter.start();
     }
 
     private static void startPhrase(String filePath) {
@@ -116,5 +135,27 @@ public class Application {
         }
 
         return -1;
+    }
+
+    public void teste() {
+
+    }
+}
+
+
+class Teste {
+
+    public String data;
+
+    public Teste(String data) {
+        this.data = data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getData() {
+        return this.data;
     }
 }
